@@ -1,16 +1,51 @@
+let cor;
+let posicaoHorizontal;
+let posicaoVertical;
+let tamanho; 
+
 function setup() {
-  createCanvas(600, 600);
+  createCanvas(400, 400);
   background("cyan");
+  cor = color(random(0,255),
+random(0,255), random(0,255))
+  posicaoHorizontal = 200;
+  posicaoVertical = 200;
+  tamanho = 60;
 }
 
+
 function draw() {
-  stroke("yellow");
-  fill("purple");
+  fill(cor)
+  circle(posicaoHorizontal, posicaoVertical, tamanho);
   
   
   
-  if(mouseIsPressed){
-     rect(mouseX,mouseY,50, 50);
-  }
+  if(mouseX < posicaoHorizontal) {
+    posicaoHorizontal -= 1
+ }
+    if (mouseX > posicaoHorizontal){
+      posicaoHorizontal += 1
+    }
+    
+
+    if(mouseY > posicaoVertical){
+      posicaoVertical += 1
+    }
+      
+      
+    if(mouseY < posicaoVertical){
+      posicaoVertical -= 1
+    }
+    if(mouseIsPressed){
+      cor= color (random(0,255), random(0,255), random(0,255,), random (0,100));
+        
+      }
+    
+      
+    
+    }
+      
+    
+    
   
-}
+  
